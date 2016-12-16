@@ -1,1 +1,15 @@
 /* CSS declarations go here */
+.shout-it{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: solid;
+    border-color: green;
+}
+
+.shout-it-text-box {
+    width: 100%;
+    font-size: 30px;
+    height: 50px;
+
+}

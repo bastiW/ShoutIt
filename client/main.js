@@ -3,20 +3,33 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+
+
+Template.shoutit.helpers({
+    shouts() {
+        return Shouts.find({}, { sort: { createdAt: -1 }});
+    },
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+Template.shoutit.events({
+    'submit .shout-it'(event) {
+        // Prevent default browser form submit
+        event.preventDefault();
+
+        // Get value from form element
+        const target = event.target;
+        const shout = target.shout.value;
+
+        // Insert a task into the collection
+      console.log(shout);
+
+      Shouts.insert({
+          shout: shout,
+          createdAt: new Date()
+      })
+
+        // Clear form
+        target.shout.value = '';
+    },
 });

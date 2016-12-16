@@ -1,25 +1,31 @@
 <head>
-  <title>ShoutItOut</title>
+    <title>ShoutItOut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
-  {{> info}}
+    {{>shoutit}}
+
+
+
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
+<template name="shoutit">
+    <h1>ShoutIt</h1>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+    {{#each shouts}}
+       <h4> {{shout}}</h4>
+    {{/each}}
+
+
+
+
+    <form class="shout-it">
+        <input type="text" name="shout" class="shout-it-text-box" />
+    </form>
+
+
+
 </template>
