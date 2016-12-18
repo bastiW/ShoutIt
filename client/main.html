@@ -1,31 +1,18 @@
 <head>
     <title>ShoutItOut</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
 </head>
 
 <body>
-
-    {{>shoutit}}
-
-
-
+{{>shoutit}}
 </body>
 
 <template name="shoutit">
     <h1>ShoutIt</h1>
-
     {{#each shouts}}
-       <h4> {{shout}}</h4>
+        <h4> {{shout}}</h4>
     {{/each}}
-
-
-
-
     <form class="shout-it">
-        <input type="text" name="shout" class="shout-it-text-box" />
+        <input type="text" name="shout" placeholder="SHOUTIT" class="shout-it-text-box"/>
     </form>
-
-
-
 </template>

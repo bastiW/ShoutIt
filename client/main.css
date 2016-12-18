@@ -4,12 +4,11 @@
     bottom: 0;
     width: 100%;
     border: solid;
-    border-color: green;
+    border-color: orangered;
 }
 
 .shout-it-text-box {
     width: 100%;
     font-size: 30px;
     height: 50px;
-
 }
